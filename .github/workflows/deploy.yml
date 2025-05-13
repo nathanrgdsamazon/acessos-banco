@@ -24,7 +24,7 @@ jobs:
       - name: Authenticate to Firebase
         run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}" > firebase-key.json
 
-      - name: Firebase Deploy
+      - name: Deploy to Firebase Hosting
         run: |
-          firebase use --add
-          firebase deploy --project acessos-bancarios --token "$(cat firebase-key.json | jq -r .token)"
+          export GOOGLE_APPLICATION_CREDENTIALS=firebase-key.json
+          firebase deploy --project acessos-bancarios --only hosting
