@@ -1,5 +1,12 @@
 {
   "projects": {
-    "default": "acessos-bancos"
+    "default": "acessos-bancarios"
+  },
+  "targets": {
+    "acessos-bancarios": {
+      "hosting": {
+        "acessos-bancarios": []
+      }
+    }
   }
 }
